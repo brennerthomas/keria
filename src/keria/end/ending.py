@@ -86,8 +86,6 @@ class OOBIEnd:
 
         agent = self.agency.lookup(pre=aid)
 
-        print(agent)
-        
         if agent is None:
             raise falcon.HTTPNotFound(description="AID not found for this OOBI")
 
@@ -105,6 +103,8 @@ class OOBIEnd:
             eids.append(eid)
 
         msgs = hab.replyToOobi(aid=aid, role=role, eids=eids)
+
+        print(msgs)
         if not msgs and role is None:
             msgs = hab.replyToOobi(aid=aid, role=kering.Roles.witness, eids=eids)
             msgs.extend(hab.replay(aid))
