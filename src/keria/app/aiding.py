@@ -1066,6 +1066,8 @@ class IdentifierOOBICollectionEnd:
         if "role" not in req.params:
             raise falcon.HTTPBadRequest(description="role parameter required")
 
+        print("Hier bin ich rihtig.")
+
         role = req.params["role"]
 
         res = dict(role=role)
