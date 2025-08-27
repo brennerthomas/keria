@@ -83,6 +83,8 @@ class OOBIEnd:
                 raise falcon.HTTPNotFound(description="no blind oobi for this node")
 
             aid = self.default
+        
+        print("Hier bin ich nun mal.")
 
         agent = self.agency.lookup(pre=aid)
         if agent is None:
