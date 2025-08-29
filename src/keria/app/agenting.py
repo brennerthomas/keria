@@ -126,6 +126,8 @@ def runAgency(config: KERIAServerConfig):
         help.ogler.headDirPath = config.logFile
         help.ogler.reopen(name=config.name, temp=False, clear=True)
 
+    
+    config.curls = ["http://ec2-3-72-247-194.eu-central-1.compute.amazonaws.com:3902/"]
     logger.info("CURLS: ")
     logger.info(config.curls)
     logger.info("Starting Agent for %s listening: admin/%s, http/%s, boot/%s",
