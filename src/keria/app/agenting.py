@@ -119,8 +119,6 @@ class KERIAServerConfig:
     bootUsername: str = None
 
 def runAgency(config: KERIAServerConfig):
-    logger.info("Curls: ", config.curls)
-    logger.info("iurls: ", config.iurls)
     """Runs a KERIA Agency with the given Doers by calling Doist.do(). Useful for testing."""
     help.ogler.level = logging.getLevelName(config.logLevel)
     logger.setLevel(help.ogler.level)
@@ -128,6 +126,7 @@ def runAgency(config: KERIAServerConfig):
         help.ogler.headDirPath = config.logFile
         help.ogler.reopen(name=config.name, temp=False, clear=True)
 
+    logger.inf("CURLS: ")
     logger.info("Starting Agent for %s listening: admin/%s, http/%s, boot/%s",
                 config.name, config.adminPort, config.httpPort, config.bootPort)
     logger.info("PID: %s", os.getpid())
