@@ -119,8 +119,8 @@ class KERIAServerConfig:
     bootUsername: str = None
 
 def runAgency(config: KERIAServerConfig):
-    print("Curls: ", config.curls)
-    print("iurls: ", config.iurls)
+    logger.info("Curls: ", config.curls)
+    logger.info("iurls: ", config.iurls)
     """Runs a KERIA Agency with the given Doers by calling Doist.do(). Useful for testing."""
     help.ogler.level = logging.getLevelName(config.logLevel)
     logger.setLevel(help.ogler.level)
